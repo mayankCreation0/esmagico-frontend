@@ -42,7 +42,7 @@ const LoginPage = () => {
         event.preventDefault();
         try {
             const res = await axios.post(
-                "http://localhost:3030/user/login",
+                "https://esmagico-backend-84ul.vercel.app/user/login",
                 input
             );
             console.log(res.data.token);

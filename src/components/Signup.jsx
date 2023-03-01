@@ -40,7 +40,7 @@ const SignupPage = () => {
         console.log(input);
         try {
             const res = await axios.post(
-                "http://localhost:3030/user/register",
+                "https://esmagico-backend-84ul.vercel.app/user/register",
                 input
             );
             console.log(res.status);

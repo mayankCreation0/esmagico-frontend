@@ -76,7 +76,7 @@ const Home = () => {
         setLoading(true);
         axios
             .get(
-                `https://josh-talks-backend.vercel.app/todo`,
+                `https://esmagico-backend-84ul.vercel.app/todo`,
                 { headers }
             )
             .then((response) => {
