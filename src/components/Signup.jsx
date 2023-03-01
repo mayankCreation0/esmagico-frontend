@@ -18,9 +18,10 @@ import axios from "axios";
 const SignupPage = () => {
     const navigate = useNavigate();
     const [input, setInput] = useState({
-        username: "",
+        name: "",
         email: "",
         password: "",
+        role:"",
     });
     const toast = useToast();
     const [showPassword, setShowPassword] = useState(false);
@@ -36,13 +37,14 @@ const SignupPage = () => {
     }, []);
     const handleSubmit = async (event) => {
         event.preventDefault();
+        console.log(input);
         try {
             const res = await axios.post(
-                "https://josh-talks-backend.vercel.app/signup",
+                "http://localhost:3030/user/register",
                 input
             );
             console.log(res.status);
-            if (res.status === 201) {
+            if (res.status === 200) {
                 toast({
                     title: 'signup Sucessfully.',
                     description: "Welcome!!",
@@ -109,8 +111,7 @@ const SignupPage = () => {
                         <FormLabel htmlFor="String">Username</FormLabel>
                         <Input
                             type="String"
-                            id="email"
-                            name="username"
+                            name="name"
                             border="1px solid black"
                             bg="white"
                             ref={inputRef}
@@ -160,9 +161,9 @@ const SignupPage = () => {
                     </FormControl>
                     <FormControl mt={4}>
                         <FormLabel>User Type</FormLabel>
-                        <Select placeholder='Select user type' >
-                            <option value='complete'>Admin</option>
-                            <option value='incomplete'>User</option>
+                        <Select placeholder='Select user type' name="role" onChange={handleChange}>
+                            <option value='admin'>Admin</option>
+                            <option value='user'>User</option>
                         </Select>
                     </FormControl>
                     <button className="stylish-button" type="submit">

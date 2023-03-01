@@ -1,12 +1,12 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 // import CreateTask from "../Components/CreateTask";
-// import Home from "../Components/Home";
+import Home from "../Components/Home";
 import LoginPage from "../components/LoginPage";
-// import Navbar from "../Components/Navbar";
+import Navbar from "../Components/Navbar";
 import SignupPage from "../components/Signup";
 // import TodoDetails from "../Components/TaskDetail";
-// import PrivateRoute from "./PrivateRoutes";
+import PrivateRoute from "./PrivateRoutes";
 
 function AllRoutes() {
     return (
@@ -14,7 +14,7 @@ function AllRoutes() {
             <Routes>
                 <Route path="/" element={<LoginPage />} />
                 <Route path="/signup" element={<SignupPage />} />
-                {/* <Route
+                <Route
                     path="/home"
                     element={
                         <PrivateRoute>
@@ -22,7 +22,7 @@ function AllRoutes() {
                             <Home />
                         </PrivateRoute>
                     }
-                /> */}
+                />
             </Routes>
         </div>
     );

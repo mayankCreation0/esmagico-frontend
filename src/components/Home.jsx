@@ -43,7 +43,7 @@ const Home = () => {
             description
         };
         try {
-            const response = await axios.put(`https://josh-talks-backend.vercel.app/todo/${operationId}`, data, { headers });
+            const response = await axios.get(`http://localhost:3030/user/loggedIn`, { headers });
             updateLists(operationId);
         } catch (error) {
             console.log(error)

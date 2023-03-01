@@ -42,7 +42,7 @@ const LoginPage = () => {
         event.preventDefault();
         try {
             const res = await axios.post(
-                "https://josh-talks-backend.vercel.app/login",
+                "http://localhost:3030/user/login",
                 input
             );
             console.log(res.data.token);
@@ -161,15 +161,7 @@ const LoginPage = () => {
                                     </InputRightAddon>
                                 </InputGroup>
                             </FormControl>
-                                <FormControl mt={4}>
-                                    <FormLabel>User Type</FormLabel>
-                                    <Select placeholder='Select user type' >
-                                        <option value='complete'>Admin</option>
-                                        <option value='incomplete'>User</option>
-                                    </Select>
-
-                                </FormControl>
-
+                              
                             <button className="stylish-button" type="submit">
                                 LOGIN
                             </button>
